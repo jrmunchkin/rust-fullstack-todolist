@@ -1,0 +1,20 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4"
+actix-cors = "0.6.4"
+thiserror = "1.0"
+model = { version = "0.1.0", path = "../model" }
+serde = {version = "=1.0.126", features = ["derive"] }
+futures = { version = "0.3.4", default-features = false, features = ["async-await"] }
+dotenv_codegen = "0.15.0"
+
+[dependencies.mongodb]
+version = "2.4.0"
+default-features = false
+features = ["async-std-runtime"] 

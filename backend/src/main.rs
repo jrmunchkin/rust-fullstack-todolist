@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate dotenv_codegen;
 
+mod cron;
 mod db;
 mod error;
 mod handler;
@@ -13,9 +14,17 @@ use std::process;
 const DB_NAME: &str = dotenv!("DB_NAME");
 const PORT: &str = dotenv!("PORT");
 const MONGO_URL: &str = dotenv!("MONGO_URL");
+const ENABLE_CRON: &str = dotenv!("ENABLE_CRON");
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    if ENABLE_CRON == "true" {
+        match cron::start_cron().await {
+            Ok(()) => (),
+            Err(e) => println!("Cron went wrong : {}", e),
+        }
+    }
+
     let db = match db::DB::init().await {
         Ok(db) => {
             println!("Connected to database successfuly");

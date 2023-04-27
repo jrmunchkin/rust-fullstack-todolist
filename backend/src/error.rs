@@ -13,4 +13,6 @@ pub enum Error {
     InvalidIDError(String),
     #[error("json error")]
     JsonError(#[from] bson::extjson::de::Error),
+    #[error("cron error")]
+    CronError(#[from] tokio_cron_scheduler::JobSchedulerError),
 }

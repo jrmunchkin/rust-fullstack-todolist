@@ -3,6 +3,7 @@
 ![App](readme.png)
 
 This repository gives a complete todolist stack from the server side to the client side all built in Rust.
+
 The backend is interconnected with a MongoDB database.
 
 ## Summary
@@ -34,7 +35,7 @@ git clone https://github.com/jrmunchkin/rust-fullstack-todolist
 
 Set the `PORT` where you will run your backend (e.g 8000)
 
-Set the `MONGO_URL` to link the database.
+To run with the MongoDB database you first need to create a database on [MongoDB website](https://cloud.mongodb.com/) then set your `MONGO_URL` to link the database.
 
 Set the `DB_NAME` with the name of your database.
 

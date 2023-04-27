@@ -6,6 +6,8 @@ This repository gives a complete todolist stack from the server side to the clie
 
 The backend is interconnected with a MongoDB database.
 
+[Full example of the App here!](http://3.106.46.47/)
+
 ## Summary
 
 - [Rust fullstack todolist](#rust-fullstack-todolist)

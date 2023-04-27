@@ -9,7 +9,7 @@ pub async fn start_cron() -> Result<(), Error> {
 
     sched
         .add(
-            Job::new_async("0 */1 * * * *", |_uuid, _l| {
+            Job::new_async("0 10 0 * * *", |_uuid, _l| {
                 Box::pin(async {
                     reset_datas().await.unwrap();
                 })
